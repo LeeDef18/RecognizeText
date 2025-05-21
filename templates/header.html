@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Распознавание текста</title>
+  <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+
+  <h1>Распознавание текста по фото</h1>
+
+  <div class="drop-zone" id="drop-zone">
+    <input type="file" id="fileInput" accept="image/*" hidden>
+
+    <div id="dropPrompt" class="text-header">
+      <img src="{{ url_for('static', filename='icons/download.svg') }}" alt="Загрузка" class="drop-zone__icon">
+      <p class="drop-zone__main-text">Загрузите файл / фото</p>
+      <p class="drop-zone__sub-text">или перетащите в выделенную область</p>
+    </div>
+
+    <img id="preview" class="preview">
+
+    <div class="buttons-bg" id="buttonsBg">
+      <p class="filename"></p>
+      <button class="apply" id="recognizeBtn">Распознать</button>
+      <button class="delete-btn"><img src="{{ url_for('static', filename='icons/delete.svg') }}" alt="Удалить"></button>
+      <button class="refresh-btn"><img src="{{ url_for('static', filename='icons/refresh.svg') }}" alt="Обновить"></button>
+    </div>
+  </div>
+
+  <div class="output" id="output">
+    <div class="loader-container">
+      <div class="loader"></div>
+      <p class="detect">Распознаем...</p>
+      <p class="procent">0%</p>
+    </div>
+  </div>
+
+  <div class="output-text" id="outputText">
+    <p class="txt-header">Распознанный текст</p>
+    <p class="txt" id="recognizedText"></p>
+    <div class="reply">
+      <button class="reply-btn" id="copyBtn">
+        <img src="{{ url_for('static', filename='icons/copy.svg') }}" alt="Копировать" class="reply-icon">
+        <span class="reply-text">Копировать</span>
+      </button>
+      <button class="action-btn" id="likeBtn">
+        <img src="{{ url_for('static', filename='icons/like.svg') }}" alt="Лайк" class="action-icon">
+      </button>
+      <button class="action-btn" id="reprocessBtn">
+        <img src="i{{ url_for('static', filename='icons/refresh-txt.svg') }}" alt="Повторить" class="action-icon">
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
