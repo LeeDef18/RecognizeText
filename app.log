@@ -1,0 +1,7 @@
+2025-05-21 15:08:05,572 - ocr_service - ERROR - Upload failed: KafkaService.send_ocr_task() got an unexpected keyword argument 'task_id'
+2025-05-21 15:09:41,844 - ocr_service - ERROR - Upload failed: KafkaService.send_ocr_task() got an unexpected keyword argument 'task_id'
+2025-05-21 15:13:53,117 - ocr_service - INFO - Task 3 submitted to Kafka
+2025-05-21 15:14:14,724 - ocr_service - INFO - Task 4 submitted to Kafka
+2025-05-21 15:14:44,843 - ocr_service - INFO - Task 5 submitted to Kafka
+2025-05-21 15:16:40,752 - ocr_service - INFO - Task 6 submitted to Kafka
+2025-05-21 15:17:36,578 - ocr_service - INFO - Task 7 submitted to Kafka
