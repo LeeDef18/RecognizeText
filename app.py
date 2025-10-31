@@ -22,7 +22,7 @@ db = SQLAlchemy(app)
 
 class TextCleaner:
     def __init__(self):
-        # Список матерных слов и их форм (можно расширить)
+        # Список слов для обработки
         self.profanity_words = {
             'блять', 'бля', 'бляха', 'бл', 'сука', 'суки', 'нихуя', 'хуй', 'хуя', 'пизд',
             'пиздец', 'еб', 'ебан', 'выеб', 'заеб', 'отсосел', 'кончил',
@@ -83,7 +83,7 @@ if not os.path.exists(TESSERACT_PATH):
 pytesseract.pytesseract.tesseract_cmd = TESSERACT_PATH
 
 #-------------------------------------------------------------------
-# Конфигурация Tesseract (укажите путь если нужно)
+# Конфигурация Tesseract (путь, если нужен)
 #pytesseract.pytesseract.tesseract_cmd = os.getenv('TESSERACT_CMD', '/usr/bin/tesseract')
 
 @app.route("/")
@@ -152,4 +152,5 @@ def get_result(result_id):
 
 
 if __name__ == '__main__':
+
     app.run(debug=True)
